@@ -5,13 +5,12 @@ import application.service.CustomerService;
 
 public class Tester {
     public static void main(String[] args) {
-        CustomerService cs = new CustomerService();
-        cs.addCustomer("j@gmail.com", "Joe", "Spaz");
-        cs.addCustomer("k@gmail.com", "kole", "Spaz");
-        cs.addCustomer("l@gmail.com", "lannie", "Spaz");
+        CustomerService.addCustomer("j@gmail.com", "Joe", "Spaz");
+        CustomerService.addCustomer("k@gmail.com", "kole", "Spaz");
+        CustomerService.addCustomer("l@gmail.com", "lannie", "Spaz");
 
-        System.out.println(cs.getCustomer("k@gmail.com"));
+        System.out.println(CustomerService.getCustomer("k@gmail.com"));
 
-        //System.out.println(cs.getAllCustomers());
+        System.out.println(CustomerService.getAllCustomers());
     }
 }
