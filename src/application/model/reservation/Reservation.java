@@ -1,49 +1,57 @@
 package application.model.reservation;
 
-import java.util.Calendar;
+import application.model.IRoom;
+import application.model.customer.Customer;
+
+import java.util.Date;
 
 public class Reservation {
-    private String customerName;
-    private String customerEmail;
-    private Calendar checkInDate;
-    private Calendar checkOutDate;
+   private Customer customer;
+   private IRoom room;
+   private Date checkInDate;
+   private Date checkOutDate;
 
-    public Reservation(String customerName, String customerEmail, Calendar checkInDate, Calendar checkOutDate) {
-        this.customerName = customerName;
-        this.customerEmail = customerEmail;
-        this.checkInDate = checkInDate;
-        this.checkOutDate = checkOutDate;
-    }
+   public Reservation(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
+       this.customer = customer;
+       this.room = room;
+       this.checkInDate = checkInDate;
+       this.checkOutDate = checkOutDate;
+   }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
+   public void setCustomer(Customer customer) {
+       this.customer = customer;
+   }
 
-    public String getCustomerName() {
-        return customerName;
-    }
+   public Customer getCustomer() {
+       return customer;
+   }
 
-    public void setCustomerEmail(String customerEmail) {
-        this.customerEmail = customerEmail;
-    }
+   public void setRoom(IRoom room) {
+       this.room = room;
+   }
 
-    public String getCustomerEmail() {
-        return customerEmail;
-    }
+   public IRoom getRoom() {
+       return room;
+   }
 
-    public void setCheckInDate(Calendar checkInDate) {
-        this.checkInDate = checkInDate;
-    }
+   public void setCheckInDate(Date checkInDate) {
+       this.checkInDate = checkInDate;
+   }
 
-    public Calendar getCheckInDate() {
-        return checkInDate;
-    }
+   public Date getCheckInDate() {
+       return checkInDate;
+   }
 
-    public void setCheckOutDate(Calendar checkOutDate) {
-        this.checkOutDate = checkOutDate;
-    }
+   public void setCheckOutDate(Date checkOutDate) {
+       this.checkOutDate = checkOutDate;
+   }
 
-    public Calendar getCheckOutDate() {
-        return checkOutDate;
-    }
+   public Date getCheckOutDate() {
+       return checkOutDate;
+   }
+
+   @Override
+    public String toString() {
+       return "Customer: " + customer + "\nRoom: " + room + "\nCheck in date: " + checkInDate + "\nCheck out date: " + checkOutDate;
+   }
 }

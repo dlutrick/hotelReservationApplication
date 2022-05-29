@@ -1,32 +1,32 @@
 package application.model.room;
 
-public class Room {
-    private double cost;
+import application.model.IRoom;
+import application.model.RoomType;
+
+public class Room implements IRoom {
     private String roomNumber;
-    private String roomType;
-    public Room(double cost, String roomNumber, String roomType) {
-        this.cost = cost;
+    private Double price;
+    private RoomType enumeration;
+    public Room(String roomNumber, Double price, RoomType enumeration) {
         this.roomNumber = roomNumber;
-        this.roomType = roomType;
-    }
-
-    public void setCost(double cost) {
-        this.cost = cost;
-    }
-
-    public double getCost() {
-        return cost;
-    }
-
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
+        this.price = price;
+        this.enumeration = enumeration;
     }
 
     public String getRoomNumber() {
         return roomNumber;
     }
-
-    public void setRoomType(String roomType) {
-        this.roomType = roomType;
+    public Double getRoomPrice() {
+        return price;
+    }
+    public RoomType getRoomType() {
+        return enumeration;
+    }
+    public boolean isFree() {
+        return true;
+    }
+    @Override
+    public String toString() {
+        return "Room number: " + roomNumber + "\nPrice: " + price + "\n Room type: " + enumeration;
     }
 }

@@ -1,26 +1,14 @@
 package application.model.freeRoom;
 
-public class FreeRoom {
-    private int id;
-    private boolean isFree;
-    public FreeRoom(int id, boolean isFree) {
-        this.id = id;
-        this.isFree = isFree;
-    }
+import application.model.RoomType;
+import application.model.room.Room;
 
-    public void setId(int id) {
-        this.id = id;
+public class FreeRoom extends Room {
+    public FreeRoom(String roomNumber, RoomType enumeration) {
+        super(roomNumber, 0.0, enumeration);
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setIsFree(boolean isFree) {
-        this.isFree = isFree;
-    }
-
-    public boolean getIsFree() {
-        return isFree;
+    @Override
+    public String toString() {
+        return "Room number: " + getRoomNumber() + "\nPrice: " + getRoomPrice() + "\nRoom type: " + getRoomType();
     }
 }

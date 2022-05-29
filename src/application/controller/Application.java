@@ -33,11 +33,13 @@ public class Application {
             int selection = scanner.nextInt();
             // Prompts the user to enter their name and email to create an account
             if(selection == 1) {
-                System.out.println("Please enter your name: ");
-                String name = scanner.next();
+                System.out.println("Please enter your first name: ");
+                String firstName = scanner.next();
+                System.out.println("Please enter your last name: ");
+                String lastName = scanner.next();
                 System.out.println("Please enter your email: ");
                 String email = scanner.next();
-                customer = new Customer(name, email);
+                customer = new Customer(firstName, lastName, email);
                 customers.put(customer.getEmail(), customer);
                 System.out.println(customer.toString());
             } else if(selection == 2) {
