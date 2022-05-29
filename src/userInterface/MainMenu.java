@@ -1,7 +1,7 @@
 package userInterface;
 
 /**
- * Admin menu class to display the menu a customer will see when booting up the app
+ * Main menu class to display the menu a customer will see when booting up the app
  *
  * @author davidlutrick
  */
@@ -16,6 +16,10 @@ public class MainMenu {
         searchRooms = "Search available rooms";
         bookRoom = "Book a room";
         viewRoom = "View a room";
+    }
+
+    public String displayMenu() {
+        return createAccount + "\n" + searchRooms + "\n" + bookRoom + "\n" + viewRoom;
     }
 
     /**
