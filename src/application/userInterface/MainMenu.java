@@ -10,15 +10,19 @@ public class MainMenu {
     private String searchRooms;
     private String bookRoom;
     private String viewRoom;
+    private String adminMenu;
+    private String logout;
 
     public MainMenu() {
-        this.createAccount = "1) Create an Account";
-        this.searchRooms = "2) Search available rooms";
-        this.bookRoom = "3) Book a room";
-        this.viewRoom = "4) View a room";
+        createAccount = "1) Create an Account";
+        searchRooms = "2) Search available rooms";
+        bookRoom = "3) Book a room";
+        viewRoom = "4) View a room";
+        adminMenu = "5) Admin menu";
+        logout = "6) Logout";
     }
 
     public String displayMenu() {
-        return createAccount + "\n" + searchRooms + "\n" + bookRoom + "\n" + viewRoom;
+        return createAccount + "\n" + searchRooms + "\n" + bookRoom + "\n" + viewRoom + "\n" + adminMenu + "\n" + logout;
     }
 }
