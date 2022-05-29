@@ -46,6 +46,7 @@ public class Application {
                 System.out.println("3");
             } else if(selection == 4) {
                 System.out.println("4");
+                // Creates the Admin menu loop
             } else if(selection == 5) {
                 isAdmin = true;
                 while(isAdmin) {
@@ -54,7 +55,7 @@ public class Application {
                     int adminSelection = scanner.nextInt();
                     scanner.nextLine();
                     if(adminSelection == 1) {
-                        
+
                     } else if(adminSelection == 2) {
                         System.out.println("2");
                     } else if(adminSelection == 3) {
