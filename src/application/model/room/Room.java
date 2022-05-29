@@ -23,7 +23,10 @@ public class Room implements IRoom {
         return enumeration;
     }
     public boolean isFree() {
-        return true;
+        if(price == 0.0) {
+            return true;
+        }
+        return false;
     }
     @Override
     public String toString() {

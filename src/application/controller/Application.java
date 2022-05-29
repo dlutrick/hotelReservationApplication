@@ -1,6 +1,9 @@
 package application.controller;
 
+import application.model.RoomType;
 import application.model.customer.Customer;
+import application.model.room.Room;
+import application.service.ReservationService;
 import application.userInterface.AdminMenu;
 import application.userInterface.MainMenu;
 
@@ -62,8 +65,28 @@ public class Application {
                         System.out.println("2");
                     } else if(adminSelection == 3) {
                         System.out.println("2");
+                        // Adds a room
                     } else if(adminSelection == 4) {
-                        System.out.println("2");
+                        System.out.println("What's the room number? ");
+                        String roomNumber = scanner.next();
+                        System.out.println("What's the price? ");
+                        Double price = scanner.nextDouble();
+                        System.out.println("Single or double? ");
+                        RoomType roomType = null;
+                        boolean isSelecting = true;
+                        while(isSelecting) {
+                            String roomTypeAnswer = scanner.next();
+                            if(roomTypeAnswer.equalsIgnoreCase("single")) {
+                                roomType = RoomType.SINGLE;
+                                isSelecting = false;
+                            } else if(roomTypeAnswer.equalsIgnoreCase("double")) {
+                                roomType = RoomType.DOUBLE;
+                                isSelecting = false;
+                            } else {
+                                System.out.println("------That's not a valid type. Please enter single or double------");
+                            }
+                        }
+                        ReservationService.addRoom(new Room(roomNumber, price, roomType));
                     } else if(adminSelection == 5) {
                         isAdmin = false;
                     } else {
