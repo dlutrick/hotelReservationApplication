@@ -41,7 +41,7 @@ public class Application {
                 String email = scanner.next();
                 customer = new Customer(firstName, lastName, email);
                 customers.put(customer.getEmail(), customer);
-                System.out.println(customer.toString());
+                System.out.println(customer);
             } else if(selection == 2) {
                 System.out.println("2");
             } else if(selection == 3) {
