@@ -1,14 +1,12 @@
 package application;
 
+import application.controller.Application;
+import application.controller.LoggedIn;
+
 public class Main {
     public static void main(String[] args) {
         LoggedIn loggedIn = new LoggedIn(true);
-        applicationStart(loggedIn.getLoggedIn());
-    }
-
-    public static void applicationStart(boolean loggedIn) {
-        while(loggedIn == true) {
-            
-        }
+        Application app = new Application();
+        app.start(loggedIn.getLoggedIn());
     }
 }
