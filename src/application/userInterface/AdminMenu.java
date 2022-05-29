@@ -1,4 +1,4 @@
-package userInterface;
+package application.userInterface;
 
 /**
  * Admin menu class to display the menu an admin will see when booting up the app
@@ -9,7 +9,7 @@ public class AdminMenu {
     private String displayAllHotelReservations;
     private String addRoom;
 
-    AdminMenu() {
+    public AdminMenu() {
         displayAccounts = "1) Display all accounts";
         displayAllRooms = "2) Display all rooms";
         displayAllHotelReservations = "3) Display all reservations";
