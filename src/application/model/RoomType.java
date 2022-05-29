@@ -1,4 +1,4 @@
-package application.models;
+package application.model;
 
 public enum RoomType {
     SINGLE, DOUBLE;

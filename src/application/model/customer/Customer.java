@@ -1,4 +1,4 @@
-package application.models.customer;
+package application.model.customer;
 
 /**
  * The class for each customer created

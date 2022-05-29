@@ -1,4 +1,4 @@
-package application.models.freeRoom;
+package application.model.freeRoom;
 
 public class FreeRoom {
     private int id;

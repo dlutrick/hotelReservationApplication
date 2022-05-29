@@ -1,6 +1,6 @@
 package application.controller;
 
-import application.models.customer.Customer;
+import application.model.customer.Customer;
 import application.userInterface.AdminMenu;
 import application.userInterface.MainMenu;
 

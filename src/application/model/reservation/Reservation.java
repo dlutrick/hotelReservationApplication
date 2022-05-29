@@ -1,4 +1,4 @@
-package application.models.reservation;
+package application.model.reservation;
 
 import java.util.Calendar;
 

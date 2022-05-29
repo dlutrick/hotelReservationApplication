@@ -1,4 +1,4 @@
-package application.models.room;
+package application.model.room;
 
 public class Room {
     private double cost;
