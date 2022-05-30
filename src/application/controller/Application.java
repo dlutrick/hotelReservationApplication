@@ -7,6 +7,9 @@ import application.service.ReservationService;
 import application.userInterface.AdminMenu;
 import application.userInterface.MainMenu;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -25,13 +28,13 @@ public class Application {
      * Application loop that runs the cli if the user is currently logged in
      * @param loggedIn boolean value representing the customer being logged in or not
      */
-    public void start(boolean loggedIn) {
+    public void start(boolean loggedIn) throws ParseException {
         // Key value pair data structure containing all of the customers that sign up
         Map<String, Customer> customers = new HashMap<>();
-        Customer customer;
+        Customer customer = null;
         boolean isAdmin = false;
         while(loggedIn) {
-            System.out.println("------Welcome valued customer!------");
+            System.out.println("------Welcome valued customer------");
             System.out.println(mainMenu.displayMenu());
             int selection = scanner.nextInt();
             // Prompts the user to enter their name and email to create an account
@@ -48,13 +51,21 @@ public class Application {
             } else if(selection == 2) {
                 System.out.println("2");
             } else if(selection == 3) {
-                System.out.println("3");
+                // Books a reservation
+                System.out.println("What room would you like to book?");
+                String desiredRoom = scanner.next();
+                System.out.println("Check in date: ");
+                String checkIn = scanner.next();
+                System.out.println("Check out date: ");
+                String checkOut = scanner.next();
+                ReservationService.reserveARoom(customers.get(customer.getEmail()), ReservationService.getARoom(desiredRoom), new SimpleDateFormat("dd/MM/yyyy").parse(checkIn), new SimpleDateFormat("dd/MM/yyyy").parse(checkOut));
             } else if(selection == 4) {
+                // View a single room
                 System.out.println("Enter a room number: ");
                 String roomNumber = scanner.next();
                 System.out.println(ReservationService.getARoom(roomNumber));
-                // Creates the Admin menu loop
             } else if(selection == 5) {
+                // Creates the Admin menu loop
                 isAdmin = true;
                 while(isAdmin) {
                     System.out.println("------Welcome admin------");
@@ -67,8 +78,8 @@ public class Application {
                         System.out.println("2");
                     } else if(adminSelection == 3) {
                         System.out.println("2");
-                        // Adds a room
                     } else if(adminSelection == 4) {
+                        // Adds a room
                         System.out.println("What's the room number? ");
                         String roomNumber = scanner.next();
                         System.out.println("What's the price? ");
