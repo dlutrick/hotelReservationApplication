@@ -14,9 +14,9 @@ public class ReservationService {
     public static void addRoom(IRoom room) {
         rooms.put(room.getRoomNumber(), room);
     }
-//    public static IRoom getARoom(String roomId) {
-//        return rooms.get(roomId);
-//    }
+    public static IRoom getARoom(String roomId) {
+        return rooms.get(roomId);
+    }
 //    public static Reservation reserveARoom(Customer customer, IRoom room, Date checkInDate, Date checkOutDate) {
 //
 //    }

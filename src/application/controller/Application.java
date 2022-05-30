@@ -50,7 +50,9 @@ public class Application {
             } else if(selection == 3) {
                 System.out.println("3");
             } else if(selection == 4) {
-                System.out.println("4");
+                System.out.println("Enter a room number: ");
+                String roomNumber = scanner.next();
+                System.out.println(ReservationService.getARoom(roomNumber));
                 // Creates the Admin menu loop
             } else if(selection == 5) {
                 isAdmin = true;
