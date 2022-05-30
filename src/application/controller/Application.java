@@ -34,7 +34,7 @@ public class Application {
         Customer customer = null;
         boolean isAdmin = false;
         while(loggedIn) {
-            System.out.println("------Welcome valued customer------");
+            System.out.println("Welcome valued customer");
             System.out.println(mainMenu.displayMenu());
             int selection = scanner.nextInt();
             // Prompts the user to enter their name and email to create an account
@@ -58,7 +58,7 @@ public class Application {
                 String checkIn = scanner.next();
                 System.out.println("Check out date: ");
                 String checkOut = scanner.next();
-                ReservationService.reserveARoom(customers.get(customer.getEmail()), ReservationService.getARoom(desiredRoom), new SimpleDateFormat("dd/MM/yyyy").parse(checkIn), new SimpleDateFormat("dd/MM/yyyy").parse(checkOut));
+                ReservationService.reserveARoom(customers.get(customer.getEmail()), ReservationService.getARoom(desiredRoom), new SimpleDateFormat("MM/dd/yyyy").parse(checkIn), new SimpleDateFormat("MM/dd/yyyy").parse(checkOut));
             } else if(selection == 4) {
                 // View a single room
                 System.out.println("Enter a room number: ");
@@ -68,7 +68,7 @@ public class Application {
                 // Creates the Admin menu loop
                 isAdmin = true;
                 while(isAdmin) {
-                    System.out.println("------Welcome admin------");
+                    System.out.println("Welcome admin");
                     System.out.println(adminMenu.displayMenu());
                     int adminSelection = scanner.nextInt();
                     scanner.nextLine();

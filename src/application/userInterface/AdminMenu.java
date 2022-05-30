@@ -4,21 +4,18 @@ package application.userInterface;
  * Admin menu class to display the menu an admin will see when booting up the app
  */
 public class AdminMenu {
-    private String displayAccounts;
-    private String displayAllRooms;
-    private String displayAllHotelReservations;
-    private String addRoom;
-    private String mainMenu;
-
+    private String adminMenu;
     public AdminMenu() {
-        displayAccounts = "1) Display all accounts";
-        displayAllRooms = "2) Display all rooms";
-        displayAllHotelReservations = "3) Display all reservations";
-        addRoom = "4) Add a room";
-        mainMenu = "5) Main menu";
+        adminMenu = "------------------------------\n" +
+                    "1) See all Customers\n" +
+                    "2) See all Rooms\n" +
+                    "3) See all Reservations\n" +
+                    "4) Add a Room\n" +
+                    "5) Back to Main Menu\n" +
+                    "------------------------------";
     }
 
     public String displayMenu() {
-        return displayAccounts + "\n" + displayAllRooms + "\n" + displayAllHotelReservations + "\n" + addRoom + "\n" + mainMenu;
+        return adminMenu;
     }
 }

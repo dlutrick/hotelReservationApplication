@@ -6,23 +6,18 @@ package application.userInterface;
  * @author davidlutrick
  */
 public class MainMenu {
-    private String createAccount;
-    private String searchRooms;
-    private String bookRoom;
-    private String viewRoom;
-    private String adminMenu;
-    private String logout;
-
+    private String mainMenu;
     public MainMenu() {
-        createAccount = "1) Create an Account";
-        searchRooms = "2) Search available rooms";
-        bookRoom = "3) Book a room";
-        viewRoom = "4) View a room";
-        adminMenu = "5) Admin menu";
-        logout = "6) Logout";
+        mainMenu = "------------------------------\n" +
+                    "1) Find and reserve a room\n" +
+                    "2) See my reservations\n" +
+                    "3) Create an account\n" +
+                    "4) Admin menu\n" +
+                    "5) Logout\n" +
+                    "------------------------------";
     }
 
     public String displayMenu() {
-        return createAccount + "\n" + searchRooms + "\n" + bookRoom + "\n" + viewRoom + "\n" + adminMenu + "\n" + logout;
+        return mainMenu;
     }
 }
