@@ -32,7 +32,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "First name: " + firstName +
+        return "\nFirst name: " + firstName +
                 "\nLast name: " + lastName +
                 "\nEmail: " + email;
     }

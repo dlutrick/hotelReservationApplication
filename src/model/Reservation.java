@@ -33,8 +33,10 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Customer: " + customer.toString() +
-                "\nRoom: " + room.toString() +
+        return "\nCUSTOMER " + customer.toString() +
+                "\n------------------------------" +
+                "\nROOM " + room.toString() +
+                "\n------------------------------" +
                 "\nCheck in date: " + checkInDate +
                 "\nCheck out date: " + checkOutDate;
     }

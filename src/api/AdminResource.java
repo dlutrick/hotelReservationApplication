@@ -2,29 +2,45 @@ package api;
 
 import model.Customer;
 import model.IRoom;
+import model.Room;
+import model.RoomType;
 import service.CustomerService;
 import service.ReservationService;
 
 import java.util.Collection;
 
 public class AdminResource {
-    public static Customer getCustomer(String email) {
-        return CustomerService.getCustomer(email);
+    private final ReservationService reservationService = ReservationService.getInstance();
+    private final CustomerService customerService = CustomerService.getInstance();
+    public Customer getCustomer(String email) {
+        return customerService.getCustomer(email);
     }
 
-    public static void addRoom(IRoom room) {
-        ReservationService.addRoom(room);
+    public void addRoom(IRoom room) {
+        reservationService.addRoom(room);
     }
 
-    public static Collection<IRoom> getAllRooms() {
-        return ReservationService.getAllRooms();
+    public Collection<IRoom> getAllRooms() {
+        return reservationService.getAllRooms();
     }
 
-    public static Collection<Customer> getAllCustomers() {
-        return CustomerService.getAllCustomers();
+    public Collection<Customer> getAllCustomers() {
+        return customerService.getAllCustomers();
     }
 
-    public static void displayAllReservations() {
-        System.out.println(ReservationService.getAllReservations());
+    public void displayAllReservations() {
+        System.out.println(reservationService.getAllReservations());
+    }
+
+    public void addTestData() {
+        AdminResource adminResource = new AdminResource();
+        Room room = new Room("100", 100.00, RoomType.SINGLE);
+        Room room2 = new Room("101", 150.00, RoomType.DOUBLE);
+        adminResource.addRoom(room);
+        adminResource.addRoom(room2);
+
+        customerService.addCustomer("John", "Doe", "john@example.com");
+        customerService.addCustomer("Jane", "Doe", "jane@example.com");
+
     }
 }
